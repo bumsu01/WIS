@@ -21,20 +21,20 @@ public class MainActivity extends AppCompatActivity {
     public void mClick(View v) {
         switch (v.getId()) {
             case R.id.Btn_Level_Mode:
-                startActivity(new Intent(this, GameSelectActivity.class));
                 Log.v("Tag_Main", "Game Select Mode Click.");
+                startActivity(new Intent(this, GameSelectActivity.class));
                 break;
             case R.id.Btn_Bluetooth_Connect:
-                startActivity(new Intent(this, ConnectActivity.class));
                 Log.v("Tag_Main", "Connect Bluetooth Mode Click.");
+                startActivity(new Intent(this, ConnectActivity.class));
                 break;
             case R.id.Btn_Login:
-                //startActivity(new Intent(this, ConnectActivity.class));
                 Log.v("Tag_Main", "Login Button Click.");
+                //startActivity(new Intent(this, ConnectActivity.class));
                 break;
             case R.id.Btn_Setting:
-                startActivity(new Intent(this, SettingActivity.class));
                 Log.v("Tag_Main", "Login Button Click.");
+                startActivity(new Intent(this, SettingActivity.class));
                 break;
             default:
                 break;

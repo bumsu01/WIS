@@ -27,31 +27,45 @@
         </activity>
 
         <activity
+            android:name=".ConnectActivity"
+            android:label="Connect_Bluetooth"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+
+        <activity
             android:name=".GameSelectActivity"
             android:label="Game_Level_Select_Mode"
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="landscape"
-            android:theme="@android:style/Theme.NoTitleBar" />
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
 
         <activity
-            android:name=".GamePlayActivity"
+            android:name=".GamePlay_Level1_Activity"
             android:label="Game_Play_Mode"
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="landscape"
-            android:theme="@android:style/Theme.NoTitleBar" />
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
 
         <activity
-            android:name=".ConnectActivity"
-            android:label="Connect_Bluetooth"
+            android:name=".GamePlay_Level2_Activity"
+            android:label="Game_Play_Mode"
+            android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="landscape"
-            android:theme="@android:style/Theme.NoTitleBar" />
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+
+        <activity
+            android:name=".GamePlay_Level3_Activity"
+            android:label="Game_Play_Mode"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
 
         <activity
             android:name=".SettingActivity"
             android:label="Setting_Mode"
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="landscape"
-            android:theme="@android:style/Theme.NoTitleBar" />
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
     </application>
 
 </manifest>

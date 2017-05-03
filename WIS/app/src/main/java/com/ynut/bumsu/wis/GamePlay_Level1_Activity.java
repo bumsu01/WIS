@@ -7,11 +7,11 @@ import android.os.Bundle;
  * Created by bumsu on 2017-05-03.
  */
 
-public class GamePlayActivity  extends Activity {
+public class GamePlay_Level1_Activity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gameplay);
+        setContentView(R.layout.activity_gameplay_1);
     }
 }
