@@ -41,21 +41,21 @@
 
         <activity
             android:name=".GamePlay_Level1_Activity"
-            android:label="Game_Play_Mode"
+            android:label="Game_Level_1"
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="landscape"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
 
         <activity
             android:name=".GamePlay_Level2_Activity"
-            android:label="Game_Play_Mode"
+            android:label="Game_Level_2"
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="landscape"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
 
         <activity
             android:name=".GamePlay_Level3_Activity"
-            android:label="Game_Play_Mode"
+            android:label="Game_Level_3"
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="landscape"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
