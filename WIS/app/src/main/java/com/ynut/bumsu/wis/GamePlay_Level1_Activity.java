@@ -5,14 +5,13 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
-import android.view.animation.ScaleAnimation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
 
 /**
  * Created by bumsu on 2017-05-03.
@@ -31,12 +30,12 @@ public class GamePlay_Level1_Activity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gameplay_1);
+        setContentView(R.layout.activity_gameplay_001);
 
         click_cnt = 1;
 
-        pLinear = (LinearLayout) findViewById(R.id.Play_Level1_Background);
-        imgLinear = (LinearLayout) findViewById(R.id.Img_Play_Level1);
+        pLinear = (LinearLayout) findViewById(R.id.Play_Level_001_Background);
+        imgLinear = (LinearLayout) findViewById(R.id.Img_Play_Level_001);
         Btn_1 = (Button) findViewById(R.id.Btn_Play_Level1_Button1);
         Btn_2 = (Button) findViewById(R.id.Btn_Play_Level1_Button2);
         Btn_3 = (Button) findViewById(R.id.Btn_Play_Level1_Button3);
@@ -54,13 +53,59 @@ public class GamePlay_Level1_Activity extends Activity {
         Btn_15 = (Button) findViewById(R.id.Btn_Play_Level1_Button15);
         Btn_16 = (Button) findViewById(R.id.Btn_Play_Level1_Button16);
 
-        anim = new ScaleAnimation(0, 1, 0, 1, Animation.RELATIVE_TO_SELF, 0.5f,
-                Animation.RELATIVE_TO_SELF, 0.5f);
-        anim.setDuration(1000);
-        imgLinear.setAnimation(anim);
+        Btn_1.setEnabled(false);
+        Btn_2.setEnabled(false);
+        Btn_3.setEnabled(false);
+        Btn_4.setEnabled(false);
+        Btn_5.setEnabled(false);
+        Btn_6.setEnabled(false);
+        Btn_7.setEnabled(false);
+        Btn_8.setEnabled(false);
+        Btn_9.setEnabled(false);
+        Btn_10.setEnabled(false);
+        Btn_11.setEnabled(false);
+        Btn_12.setEnabled(false);
+        Btn_13.setEnabled(false);
+        Btn_14.setEnabled(false);
+        Btn_15.setEnabled(false);
+        Btn_16.setEnabled(false);
+        imgLinear.setBackgroundResource(R.drawable.play_level_001);
 
-        //pLinear.setRotation(90.0f);
-        imgLinear.setBackgroundResource(R.drawable.play_question);
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                imgLinear.setBackgroundResource(R.drawable.play_question);
+                anim = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.rotate_circle_090);
+                imgLinear.setAnimation(anim);
+
+                onBtnClickAnnoy();
+            }
+        }, 1500);
+    }
+
+    public void onBtnClickAnnoy()
+    {
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                Btn_1.setEnabled(true);
+                Btn_2.setEnabled(true);
+                Btn_3.setEnabled(true);
+                Btn_4.setEnabled(true);
+                Btn_5.setEnabled(true);
+                Btn_6.setEnabled(true);
+                Btn_7.setEnabled(true);
+                Btn_8.setEnabled(true);
+                Btn_9.setEnabled(true);
+                Btn_10.setEnabled(true);
+                Btn_11.setEnabled(true);
+                Btn_12.setEnabled(true);
+                Btn_13.setEnabled(true);
+                Btn_14.setEnabled(true);
+                Btn_15.setEnabled(true);
+                Btn_16.setEnabled(true);
+            }
+        }, 1000);
     }
 
     @Override
@@ -84,7 +129,7 @@ public class GamePlay_Level1_Activity extends Activity {
         new AlertDialog.Builder(this)
                 .setTitle("실패")
                 .setMessage("실패하셨습니다.")
-                .setIcon(R.drawable.play_block_color)
+                .setIcon(R.drawable.play_block_color_wrong)
                 .setCancelable(false)
                 .setNegativeButton("닫기",
                         new DialogInterface.OnClickListener() {
@@ -149,47 +194,47 @@ public class GamePlay_Level1_Activity extends Activity {
                 break;
             case R.id.Btn_Play_Level1_Button8:
                 Log.v("Tag_Play", "Button BD Click");
-                Btn_8.setBackgroundResource(R.drawable.play_block_color);
-                Success_Dialog();
+                Btn_8.setBackgroundResource(R.drawable.play_block_color_wrong);
+                if (AnswerCount() == false) Fail_Dialog();
                 break;
             case R.id.Btn_Play_Level1_Button9:
                 Log.v("Tag_Play", "Button CA Click");
-                Btn_1.setBackgroundResource(R.drawable.play_block_color_wrong);
+                Btn_9.setBackgroundResource(R.drawable.play_block_color_wrong);
                 if (AnswerCount() == false) Fail_Dialog();
                 break;
             case R.id.Btn_Play_Level1_Button10:
                 Log.v("Tag_Play", "Button CB Click");
-                Btn_9.setBackgroundResource(R.drawable.play_block_color_wrong);
+                Btn_10.setBackgroundResource(R.drawable.play_block_color_wrong);
                 if (AnswerCount() == false) Fail_Dialog();
                 break;
             case R.id.Btn_Play_Level1_Button11:
                 Log.v("Tag_Play", "Button CC Click");
-                Btn_10.setBackgroundResource(R.drawable.play_block_color_wrong);
-                if (AnswerCount() == false) Fail_Dialog();
+                Btn_11.setBackgroundResource(R.drawable.play_block_color);
+                Success_Dialog();
                 break;
             case R.id.Btn_Play_Level1_Button12:
                 Log.v("Tag_Play", "Button CD Click");
-                Btn_11.setBackgroundResource(R.drawable.play_block_color_wrong);
+                Btn_12.setBackgroundResource(R.drawable.play_block_color_wrong);
                 if (AnswerCount() == false) Fail_Dialog();
                 break;
             case R.id.Btn_Play_Level1_Button13:
                 Log.v("Tag_Play", "Button DA Click");
-                Btn_12.setBackgroundResource(R.drawable.play_block_color_wrong);
+                Btn_13.setBackgroundResource(R.drawable.play_block_color_wrong);
                 if (AnswerCount() == false) Fail_Dialog();
                 break;
             case R.id.Btn_Play_Level1_Button14:
                 Log.v("Tag_Play", "Button DB Click");
-                Btn_13.setBackgroundResource(R.drawable.play_block_color_wrong);
+                Btn_14.setBackgroundResource(R.drawable.play_block_color_wrong);
                 if (AnswerCount() == false) Fail_Dialog();
                 break;
             case R.id.Btn_Play_Level1_Button15:
                 Log.v("Tag_Play", "Button DC Click");
-                Btn_14.setBackgroundResource(R.drawable.play_block_color_wrong);
+                Btn_15.setBackgroundResource(R.drawable.play_block_color_wrong);
                 if (AnswerCount() == false) Fail_Dialog();
                 break;
             case R.id.Btn_Play_Level1_Button16:
                 Log.v("Tag_Play", "Button DD Click");
-                Btn_15.setBackgroundResource(R.drawable.play_block_color_wrong);
+                Btn_16.setBackgroundResource(R.drawable.play_block_color_wrong);
                 if (AnswerCount() == false) Fail_Dialog();
                 break;
             case R.id.Btn_Setting_Play:

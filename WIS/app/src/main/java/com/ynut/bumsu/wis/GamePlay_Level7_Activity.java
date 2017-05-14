@@ -12,35 +12,56 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 /**
- * Created by bumsu on 2017-05-03.
+ * Created by bumsu on 2017-05-07.
  */
 
-public class GamePlay_Level2_Activity extends Activity {
+public class GamePlay_Level7_Activity extends Activity {
 
     Animation mAni1 = null;
     Animation mAni2 = null;
+    Animation mAni3 = null;
+    Animation mAni4 = null;
 
     LinearLayout pLinear, imgLinear;
+    LinearLayout BLinear_1, BLinear_2, BLinear_3, BLinear_4, BLinear_5, BLinear_6, BLinear_7, BLinear_8,
+            BLinear_9, BLinear_10, BLinear_11, BLinear_12, BLinear_13, BLinear_14, BLinear_15, BLinear_16;
     Button Btn_1, Btn_2, Btn_3, Btn_4, Btn_5, Btn_6, Btn_7, Btn_8;
-    Button Btn_9, Btn_10, Btn_11, Btn_12, Btn_13, Btn_14, Btn_15, Btn_16;
+    Button Btn_9, Btn_10, Btn_11, Btn_12, Btn_13, Btn_14, Btn_15, Btn_16  ;
 
     private int wClick_cnt, aClick_cnt, answer_cnt;
-    //private int answer[] = new int[3];
+    //private int answer[] = new int[4];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gameplay_002);
+        setContentView(R.layout.activity_gameplay_007);
 
-        answer_cnt = 3;
+        answer_cnt = 4;
         aClick_cnt = 0;
         wClick_cnt = 1;
 
-        pLinear = (LinearLayout) findViewById(R.id.Play_Level_002_Background);
-        imgLinear = (LinearLayout) findViewById(R.id.Img_Play_Level_002);
+        pLinear = (LinearLayout) findViewById(R.id.Play_Level_007_Background);
+        imgLinear = (LinearLayout) findViewById(R.id.Img_Play_Level_007);
+
+        BLinear_1 = (LinearLayout) findViewById(R.id.Play_Level_007_block1);
+        BLinear_2 = (LinearLayout) findViewById(R.id.Play_Level_007_block2);
+        BLinear_3 = (LinearLayout) findViewById(R.id.Play_Level_007_block3);
+        BLinear_4 = (LinearLayout) findViewById(R.id.Play_Level_007_block4);
+        BLinear_5 = (LinearLayout) findViewById(R.id.Play_Level_007_block5);
+        BLinear_6 = (LinearLayout) findViewById(R.id.Play_Level_007_block6);
+        BLinear_7 = (LinearLayout) findViewById(R.id.Play_Level_007_block7);
+        BLinear_8 = (LinearLayout) findViewById(R.id.Play_Level_007_block8);
+        BLinear_9 = (LinearLayout) findViewById(R.id.Play_Level_007_block9);
+        BLinear_10 = (LinearLayout) findViewById(R.id.Play_Level_007_block10);
+        BLinear_11 = (LinearLayout) findViewById(R.id.Play_Level_007_block11);
+        BLinear_12 = (LinearLayout) findViewById(R.id.Play_Level_007_block12);
+        BLinear_13 = (LinearLayout) findViewById(R.id.Play_Level_007_block13);
+        BLinear_14 = (LinearLayout) findViewById(R.id.Play_Level_007_block14);
+        BLinear_15 = (LinearLayout) findViewById(R.id.Play_Level_007_block15);
+        BLinear_16 = (LinearLayout) findViewById(R.id.Play_Level_007_block16);
+
         Btn_1 = (Button) findViewById(R.id.Btn_Play_Level1_Button1);
         Btn_2 = (Button) findViewById(R.id.Btn_Play_Level1_Button2);
         Btn_3 = (Button) findViewById(R.id.Btn_Play_Level1_Button3);
@@ -58,48 +79,67 @@ public class GamePlay_Level2_Activity extends Activity {
         Btn_15 = (Button) findViewById(R.id.Btn_Play_Level1_Button15);
         Btn_16 = (Button) findViewById(R.id.Btn_Play_Level1_Button16);
 
-        Btn_1.setEnabled(false);
-        Btn_2.setEnabled(false);
-        Btn_3.setEnabled(false);
-        Btn_4.setEnabled(false);
-        Btn_5.setEnabled(false);
-        Btn_6.setEnabled(false);
-        Btn_7.setEnabled(false);
-        Btn_8.setEnabled(false);
-        Btn_9.setEnabled(false);
-        Btn_10.setEnabled(false);
-        Btn_11.setEnabled(false);
-        Btn_12.setEnabled(false);
-        Btn_13.setEnabled(false);
-        Btn_14.setEnabled(false);
-        Btn_15.setEnabled(false);
-        Btn_16.setEnabled(false);
-        imgLinear.setBackgroundResource(R.drawable.play_level_002);
+        btnAbleClick(false);
+        imgLinear.setBackgroundResource(R.drawable.play_level_007);
 
-        mAni1 = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.rotate_circle_090);
-        mAni2 = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.rotate_circle_090);
+        mAni1 = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.up1_to_down3);
+        mAni2 = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.up2_to_down4);
+        mAni3 = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.down3_to_up1);
+        mAni4 = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.down4_to_up2);
 
         mAni1.setAnimationListener(new Animation.AnimationListener() {
-            public void onAnimationEnd(Animation animation) {
-                imgLinear.startAnimation(mAni2);
-            }
-            public void onAnimationRepeat(Animation animation) {
-                ;
-            }
+            public void onAnimationEnd(Animation animation) {;}
+            public void onAnimationRepeat(Animation animation) {;}
             public void onAnimationStart(Animation animation) {
-                ;
+                BLinear_2.startAnimation(mAni2);
+                BLinear_3.startAnimation(mAni2);
+                BLinear_4.startAnimation(mAni2);
+                BLinear_5.startAnimation(mAni2);
+                BLinear_6.startAnimation(mAni2);
+                BLinear_7.startAnimation(mAni2);
+                BLinear_8.startAnimation(mAni2);
+                BLinear_9.startAnimation(mAni3);
+            }
+        });
+        mAni3.setAnimationListener(new Animation.AnimationListener() {
+            public void onAnimationEnd(Animation animation) {;}
+            public void onAnimationRepeat(Animation animation) {;}
+            public void onAnimationStart(Animation animation) {
+                BLinear_10.startAnimation(mAni4);
+                BLinear_11.startAnimation(mAni4);
+                BLinear_12.startAnimation(mAni4);
+                BLinear_13.startAnimation(mAni4);
+                BLinear_14.startAnimation(mAni4);
+                BLinear_15.startAnimation(mAni4);
+                BLinear_16.startAnimation(mAni4);
             }
         });
 
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             public void run() {
-                imgLinear.setBackgroundResource(R.drawable.play_question);
-                imgLinear.setAnimation(mAni1);
+                //imgLinear.setBackgroundResource(R.drawable.play_question);
+                imgLinear.setBackgroundResource(R.color.none);
+                Btn_1.setBackgroundResource(R.drawable.play_block_color_none);
+                Btn_2.setBackgroundResource(R.drawable.play_block_color_none);
+                Btn_3.setBackgroundResource(R.drawable.play_block_color_none);
+                Btn_4.setBackgroundResource(R.drawable.play_block_color_none);
+                Btn_5.setBackgroundResource(R.drawable.play_block_color_none);
+                Btn_6.setBackgroundResource(R.drawable.play_block_color_none);
+                Btn_7.setBackgroundResource(R.drawable.play_block_color_none);
+                Btn_8.setBackgroundResource(R.drawable.play_block_color_none);
+                Btn_9.setBackgroundResource(R.drawable.play_block_color_none);
+                Btn_10.setBackgroundResource(R.drawable.play_block_color_none);
+                Btn_11.setBackgroundResource(R.drawable.play_block_color_none);
+                Btn_12.setBackgroundResource(R.drawable.play_block_color_none);
+                Btn_13.setBackgroundResource(R.drawable.play_block_color_none);
+                Btn_14.setBackgroundResource(R.drawable.play_block_color_none);
+                Btn_15.setBackgroundResource(R.drawable.play_block_color_none);
+                Btn_16.setBackgroundResource(R.drawable.play_block_color_none);
+                BLinear_1.setAnimation(mAni1);
                 onBtnClickAnnoy();
             }
         }, 1500);
-
     }
 
     public void onBtnClickAnnoy()
@@ -107,24 +147,29 @@ public class GamePlay_Level2_Activity extends Activity {
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             public void run() {
-                Btn_1.setEnabled(true);
-                Btn_2.setEnabled(true);
-                Btn_3.setEnabled(true);
-                Btn_4.setEnabled(true);
-                Btn_5.setEnabled(true);
-                Btn_6.setEnabled(true);
-                Btn_7.setEnabled(true);
-                Btn_8.setEnabled(true);
-                Btn_9.setEnabled(true);
-                Btn_10.setEnabled(true);
-                Btn_11.setEnabled(true);
-                Btn_12.setEnabled(true);
-                Btn_13.setEnabled(true);
-                Btn_14.setEnabled(true);
-                Btn_15.setEnabled(true);
-                Btn_16.setEnabled(true);
+                btnAbleClick(true);
             }
         }, 1000);
+    }
+
+    public void btnAbleClick(boolean Value)
+    {
+        Btn_1.setEnabled(Value);
+        Btn_2.setEnabled(Value);
+        Btn_3.setEnabled(Value);
+        Btn_4.setEnabled(Value);
+        Btn_5.setEnabled(Value);
+        Btn_6.setEnabled(Value);
+        Btn_7.setEnabled(Value);
+        Btn_8.setEnabled(Value);
+        Btn_9.setEnabled(Value);
+        Btn_10.setEnabled(Value);
+        Btn_11.setEnabled(Value);
+        Btn_12.setEnabled(Value);
+        Btn_13.setEnabled(Value);
+        Btn_14.setEnabled(Value);
+        Btn_15.setEnabled(Value);
+        Btn_16.setEnabled(Value);
     }
 
     @Override
@@ -188,13 +233,17 @@ public class GamePlay_Level2_Activity extends Activity {
                 break;
             case R.id.Btn_Play_Level1_Button3:
                 Log.v("Tag_Play", "Button AC Click");
-                Btn_3.setBackgroundResource(R.drawable.play_block_color_wrong);
-                if (AnswerCount() == false) Fail_Dialog();
+                Btn_3.setBackgroundResource(R.drawable.play_block_color);
+                Btn_3.setEnabled(false);
+                aClick_cnt++;
+                if (aClick_cnt == answer_cnt) Success_Dialog();
                 break;
             case R.id.Btn_Play_Level1_Button4:
                 Log.v("Tag_Play", "Button AD Click");
-                Btn_4.setBackgroundResource(R.drawable.play_block_color_wrong);
-                if (AnswerCount() == false) Fail_Dialog();
+                Btn_4.setBackgroundResource(R.drawable.play_block_color);
+                Btn_4.setEnabled(false);
+                aClick_cnt++;
+                if (aClick_cnt == answer_cnt) Success_Dialog();
                 break;
             case R.id.Btn_Play_Level1_Button5:
                 Log.v("Tag_Play", "Button BA Click");
@@ -223,10 +272,8 @@ public class GamePlay_Level2_Activity extends Activity {
                 break;
             case R.id.Btn_Play_Level1_Button10:
                 Log.v("Tag_Play", "Button CB Click");
-                Btn_10.setBackgroundResource(R.drawable.play_block_color);
-                Btn_10.setEnabled(false);
-                aClick_cnt++;
-                if (aClick_cnt == answer_cnt) Success_Dialog();
+                Btn_10.setBackgroundResource(R.drawable.play_block_color_wrong);
+                if (AnswerCount() == false) Fail_Dialog();
                 break;
             case R.id.Btn_Play_Level1_Button11:
                 Log.v("Tag_Play", "Button CC Click");

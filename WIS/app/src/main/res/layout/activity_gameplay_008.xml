@@ -5,20 +5,20 @@
     android:layout_height="match_parent"
     android:background="@drawable/play_background"
     android:orientation="vertical"
-    android:id="@+id/Play_Level1_Background"
-    tools:context=".MainActivity" >
+    android:id="@+id/Play_Level_008_Background"
+    tools:context=".GamePlay_Level8_Activity" >
 
     <!-- Top : Level Text Layout -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dip"
-        android:layout_weight="0.2"/>
+        android:layout_weight="0.14"/>
 
     <!-- Contents Layout -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dip"
-        android:layout_weight="0.655"
+        android:layout_weight="0.715"
         android:weightSum="1"
         android:orientation="horizontal">
         <LinearLayout
@@ -32,8 +32,8 @@
             android:layout_weight="0.39"
             android:weightSum="1"
             android:orientation="horizontal"
-            android:id="@+id/Img_Play_Level1"
-            android:background="@drawable/play_level_1">
+            android:id="@+id/Img_Play_Level_008"
+            android:background="@drawable/play_level_008">
             <!--
             <ImageView
                 android:layout_width="match_parent"
@@ -51,6 +51,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="0.21"
                 android:weightSum="1"
+                android:id="@+id/play_Level_008_line_1"
                 android:orientation="vertical">
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -132,6 +133,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="0.21"
                 android:weightSum="1"
+                android:id="@+id/play_Level_008_line_2"
                 android:orientation="vertical">
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -213,6 +215,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="0.21"
                 android:weightSum="1"
+                android:id="@+id/play_Level_008_line_3"
                 android:orientation="vertical">
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -294,6 +297,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="0.21"
                 android:weightSum="1"
+                android:id="@+id/play_Level_008_line_4"
                 android:orientation="vertical">
                 <LinearLayout
                     android:layout_width="match_parent"
